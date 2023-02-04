@@ -1,0 +1,115 @@
+body {
+  margin-top: 0px;
+  padding: 0;
+  border: 0;
+  background: linear-gradient(rgb(0, 0, 0),rgb(3, 48, 3), rgb(0, 0, 0));
+}
+
+main {
+  display: flex;
+  height: 800px;
+  color: white;
+  margin-top: 100px;
+}
+
+#mixer-container {
+  width: 800px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto auto;
+}
+
+h2 {
+  color: white;
+  font-size: 2rem;
+}
+
+.input-container {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px 0;
+  row-gap: 15px;
+  opacity: 1;
+}
+
+.input-container.fade {
+  margin-left: -10000px;
+  transition: all 2s ease-in-out;
+}
+
+.input-container input {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  width: 60%;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px;
+  border: 0;
+}
+
+#request-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+}
+
+#requested-songs {
+  color: white;
+  font-size: 24px;
+  margin-top: 15px;
+}
+
+#current-value {
+  align-self: center;
+  margin-left: 15px;
+  font-size: 32px;
+}
+
+.btn-effect:hover {
+  background-color: lightgreen;
+  transition-duration: 0.1s;
+}
+
+#playlist-creating {
+  width: 100%;
+  position: absolute;
+  left: 1300px;
+  text-align: center;
+  margin-top: 110px;
+}
+
+#playlist-creating.fade {
+  transition: all 2s ease-in-out;
+  left: 0px;
+}
+
+#playlist-creating h2 {
+  display: none;
+}
+
+#pig-goes-brrr {
+  display: none;
+  text-align: center;
+  color: rgb(5, 2, 3);
+  font-size: 100px;
+  color: pink;
+}
+
+.standard-btn {
+  background-color: grey;
+  cursor: auto;
+}
+
+.active-btn {
+  background-color: rgb(65, 236, 65);
+  cursor: pointer;
+}
+
+.active-btn:hover {
+  background-color: rgb(141, 233, 141);
+}

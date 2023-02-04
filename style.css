@@ -1,0 +1,459 @@
+/*Aningen ostrukterat. Har mixat och testat lite olika effekter och vissa av
+dessa kan ha glömts bort att radera. Men eftersom det primära fokuset ligger på
+JS har jag inte gett html & css lika mycket kärlek.*/
+
+body {
+  background-color: rgb(0, 0, 0);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0;
+}
+
+#entry-page {
+  position: absolute;
+  top: 0;
+  z-index: 25;
+  width: 99.6%;
+  height: 3500px;
+  background-color: black;
+  opacity: 0.8;
+}
+
+#entry-container {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#entry-textbox {
+  position: fixed;
+  z-index: 50;
+  width: 600px;
+  height: 700px;
+  background-color: black;
+  border: 1px solid rgb(99, 241, 99);
+  color: rgb(187, 190, 187);
+  margin-right: 15px;
+  text-align: center;
+}
+
+#entry-textbox h2 {
+  font-size: 32px;
+}
+
+#entry-text {
+  margin: 0 auto;
+  font-weight: 600;
+  font-size: 18px;
+  width: 80%;
+  letter-spacing: 1px;
+}
+
+#entry-textbox a {
+  font-size: 18px;
+  color: rgb(60, 218, 60);
+}
+
+#entry-textbox a:hover {
+  color: rgb(172, 230, 172);
+}
+
+#get-user-token {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 22px;
+  padding: 8px;
+  border-radius: 10px;
+  border: 3px solid rgb(58, 87, 58);
+}
+
+.accept-btn {
+  width: 200px;
+  height: 50px;
+  cursor: auto;
+  background-color: grey;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 70px;
+}
+
+.active-accept-btn {
+  background-color: rgb(65, 236, 65);
+  cursor: pointer;
+}
+
+.active-accept-btn:hover {
+  background-color: rgb(173, 235, 173);
+}
+
+#cancel-btn {
+  background-color: rgb(129, 31, 31);
+  border-radius: 500px;
+}
+
+#cancel-btn:hover {
+  background-color: rgb(182, 79, 79);
+}
+
+header {
+  height: 860px;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#navbar {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  position: fixed;
+  z-index: 10;
+}
+
+.bi {
+  font-size: 24px;
+  color: white;
+}
+
+.bi:hover {
+  cursor: pointer;
+}
+
+#navbar a:first-child,
+#navbar a:last-child {
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(226, 216, 216);
+  transition: 0.5s ease-in-out;
+  position: relative;
+}
+
+#navbar a:first-child::after,
+#navbar a:last-child::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.175rem;
+  background-color: rgb(99, 241, 99);
+  left: 0;
+  bottom: 0;
+  transform: scale(0, 1);
+  transition: transform 0.3s ease;
+}
+
+#navbar a:first-child:hover::after,
+#navbar a:last-child:hover::after {
+  transform: scale(1, 0.3);
+}
+
+#navbar span {
+  color: rgb(23, 170, 23);
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0px 10px;
+}
+
+#navbar a:hover {
+  color: rgb(99, 241, 99);
+  transition: 0.3s ease-in-out;
+}
+
+#intro-header {
+  position: absolute;
+  top: 100px;
+  left: 200px;
+  display: flex;
+  justify-content: flex-end;
+  color: rgb(15, 248, 15);
+  font-size: 2.3rem;
+  width: 85%;
+}
+
+#intro-text-div {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 50px;
+  z-index: 1;
+}
+
+#intro-image {
+  width: 50%;
+  height: 50%;
+  border-radius: 20px;
+  animation: slideinimage 3s infinite;
+  animation-delay: 3s;
+}
+
+#intro-text-div h1 {
+  font-size: 2.8em;
+  margin: 0;
+  animation-duration: 2s;
+  animation-name: slideinh1;
+}
+
+@keyframes slideinh1 {
+  from {
+    margin-left: 130%;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes slideinimage {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.intro-text-h2 {
+  color: rgb(193, 197, 193);
+  text-shadow: 0px 0px 8px rgb(32, 168, 32);
+  margin: 15px 0;
+  font-style: oblique;
+  opacity: 0;
+}
+
+.intro-text-fadein {
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+
+#intro-btn {
+  height: 50px;
+  font-size: 17px;
+  border-radius: 500px;
+  font-style: inherit;
+  background-color: #7a0465;
+  color: rgb(207, 193, 193);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+#intro-btn:hover {
+  background-color: #ad0f90;
+}
+
+main {
+  width: 100%;
+  padding: 0;
+  border: 0;
+}
+
+.container {
+  width: 100%;
+  height: 600px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.container-songs {
+  width: 300px;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.container-songs p {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(120, 233, 120);
+}
+
+.standard-btn {
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  background-color: rgb(50, 235, 50);
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border: 0;
+}
+
+.btn-effect {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  background-color: rgb(50, 235, 50);
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border: 0;
+  transition-duration: 0.4s;
+  overflow: hidden;
+}
+
+.btn-effect:hover {
+  background-color: lightgreen;
+  transition-duration: 0.1s;
+}
+
+.btn-effect:after {
+  content: "";
+  background: rgb(207, 236, 207);
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 1.5s;
+}
+
+.btn-effect:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.btn-effect:focus {
+  outline: 0;
+}
+
+.add-to-list {
+  position: relative;
+  background-color: #af2896;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: 130px;
+  height: 25px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition-duration: 0.4s;
+}
+
+.add-to-list:hover {
+  background-color: rgb(202, 103, 202);
+  cursor: pointer;
+  transition-duration: 0.1s;
+}
+
+.add-to-list:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 20px white;
+}
+
+.add-to-list:active:after {
+  box-shadow: 0 0 0 0 rgb(202, 103, 202);
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.add-to-list:active {
+  top: 1px;
+}
+
+.container-randomize-pop,
+.container-randomize-rock,
+.container-randomize-edm,
+.container-randomize-metal,
+.container-randomize-hiphop,
+.container-randomize-trance,
+.container-randomize-rnb,
+.container-randomize-sndtracks,
+.container-randomize-reggae {
+  text-align: center;
+  display: block;
+  font-size: 20px;
+  font-weight: 800;
+  color: rgb(50, 235, 50);
+  transition: all 2s;
+  height: 55%;
+  opacity: 0;
+  margin: 5px 0;
+}
+
+.image-pop,
+.image-rock,
+.image-edm,
+.image-metal,
+.image-hiphop,
+.image-trance,
+.image-rnb,
+.image-sndtracks,
+.image-reggae {
+  border-radius: 10px;
+}
+
+.preview-pop,
+.preview-rock,
+.preview-edm,
+.preview-metal,
+.preview-hiphop,
+.preview-trance,
+.preview-rnb,
+.preview-sndtracks,
+.preview-reggae {
+  font-size: 14px;
+  color: rgb(211, 230, 211);
+}
+
+.preview-pop:hover,
+.preview-rock:hover,
+.preview-edm:hover,
+.preview-metal:hover,
+.preview-hiphop:hover,
+.preview-trance:hover,
+.preview-rnb:hover,
+.preview-sndtracks:hover,
+.preview-reggae:hover {
+  opacity: 0.5;
+}
+
+.image {
+  width: 90%;
+}
+
+footer {
+  height: 200px;
+}

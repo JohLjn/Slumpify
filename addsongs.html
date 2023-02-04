@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Create your own Spotify-list through Slumpify's randomizer."
+    />
+    <title>Slumpify | Playlist Creator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="addsongs.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div id="navbar">
+        <a href="index.html">Home</a>
+        <span>//</span>
+        <a href="addsongs.html"><i class="bi bi-spotify"></i></a>
+        <span>//</span>
+        <a href="mixer.html">Mixer</a>
+      </div>
+    </nav>
+    <main>
+      <div class="new-playlist-container">
+        <div class="input-container">
+          <div id="add-container">
+            <h2 id="playlist-heading">Create a new playlist</h2>
+            <input id="spotify-username" placeholder="* Spotify Username" />
+            <input id="playlist-name" placeholder="* Playlist Name" />
+            <input
+              id="playlist-description"
+              placeholder="(Optional) Playlist Description"
+            />
+            <button class="standard-btn" id="new-playlist-btn">
+              New Playlist
+            </button>
+          </div>
+          <div id="apply-container">
+            <h2 class="add-songs-playlist">Playlist created.</h2>
+            <h2 class="add-songs-playlist" id="playlist-header">
+              Apply new songs to playlist?
+            </h2>
+            <button class="btn-list" id="apply-songs-btn">Apply songs</button>
+          </div>
+          <div id="delete-container">
+            <h2 id="songs-added">Songs has been added.</h2>
+            <h2 id="delete-playlist">
+              Do you wish to delete playlist content?
+            </h2>
+            <button class="btn-list" id="delete-playlist-btn">
+              Delete Content
+            </button>
+          </div>
+          <h2 id="songs-deleted">Playlist content has been deleted.</h2>
+        </div>
+        <div class="chart-container">
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+      <div class="container-list-page"></div>
+    </main>
+    <script src="songplaylist.js"></script>
+  </body>
+</html>
